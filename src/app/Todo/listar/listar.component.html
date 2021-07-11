@@ -1,0 +1,97 @@
+<div class="container mt-5">
+  <!--Buscar por id-->
+  <div class="form-group mt-5">
+    <label for="">User Id con Pipe</label>
+    <input
+      type="text"
+      class="form-control"
+      name="filterUser"
+      aria-describedby="helpId"
+      placeholder=""
+      [(ngModel)]="filterUser"
+    />
+  </div>
+  <!--Buscar por id llamada api-->
+  <div class="form-group mt-5">
+    <label for="">User Id llamada</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="helpId"
+      placeholder=""
+      #id
+      (change)="listaFiltrada(id.value)"
+      (keyup)="(0)"
+    />
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3>Todo</h3>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table id="myTable" class="table">
+          <thead>
+            <tr>
+              <th>UserId</th>
+              <th>Title</th>
+              <th>Completed</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let todo of todos | filter: filterUser">
+              <td>{{ todo.user.id }}</td>
+              <td>{{ todo.title }}</td>
+              <td>{{ todo.completed }}</td>
+              <td>
+                <a
+                  id=""
+                  class="btn btn-warning"
+                  role="button"
+                  [routerLink]="['edit']"
+                  (click)="Editar(todo)"
+                  ><em class="fas fa-edit"></em
+                ></a>
+              </td>
+              <td>
+                <a
+                  (click)="Delete(todo)"
+                  id=""
+                  class="btn btn-danger"
+                  role="button"
+                  ><em class="fa fa-trash"></em
+                ></a>
+              </td>
+            </tr>
+            <tr *ngFor="let todo of lista">
+              <td>{{ todo.userId }}</td>
+              <td>{{ todo.title }}</td>
+              <td>{{ todo.completed }}</td>
+              <td>
+                <a
+                  id=""
+                  class="btn btn-warning"
+                  role="button"
+                  [routerLink]="['edit']"
+                  (click)="Editar(todo)"
+                  ><em class="fas fa-edit"></em
+                ></a>
+              </td>
+              <td>
+                <a
+                  (click)="Delete(todo)"
+                  id=""
+                  class="btn btn-danger"
+                  role="button"
+                  ><em class="fa fa-trash"></em
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
