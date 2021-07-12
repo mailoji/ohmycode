@@ -28,6 +28,9 @@ public class User {
     @Column
     private String address;
 
+    public User() {
+    }
+
     public User(int id, String name, String username, String password, String address) {
         this.id = id;
         this.name = name;
@@ -75,10 +78,5 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public User() {
-    }
-    
-    
 
 }

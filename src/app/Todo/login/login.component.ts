@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Modelo/User';
 import { ServiceService } from 'src/app/Service/service.service';
@@ -13,9 +14,10 @@ export class LoginComponent implements OnInit {
   users!: User[];
   user: User = new User();
 
-
-  id!: number;
-  password: string = '';
+  
+  
+  id = new FormControl("");  
+  password = new FormControl("");  
 
 
   constructor(private service: ServiceService, private router: Router) {}
@@ -32,9 +34,12 @@ export class LoginComponent implements OnInit {
     });
   }
   login() {
-    if (this.id == 1) {
+    if ( this.id.value == 1 && this.password.value ==1234 || this.id.value == 2 && this.password.value ==1234) {
       Swal.fire('Welcome', 'success');
+      this.router.navigate(['']);
     } else {
+      Swal.fire('Usuario incorrecto');
+
 
       
     }

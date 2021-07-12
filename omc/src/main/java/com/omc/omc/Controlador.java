@@ -5,6 +5,7 @@
  */
 package com.omc.omc;
 
+import com.google.gson.Gson;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping({"/todos"})
 public class Controlador {
+
+    Gson gson = new Gson();
 
     @Autowired
     TodoService service;
