@@ -1,27 +1,28 @@
 # Omc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+Prueba técnica realizada con angular y spring
 
-## Development server
+## BBDD
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Dentro de los archivos del proyecto hay un script de una bbdd de datos que deberemos importar en nuestro mysql
 
-## Code scaffolding
+omc > script bbdd
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Front
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para arrancar la parte front de la aplicación los pasos son:
 
-## Running unit tests
+Entrar en el directorio omc > npm install > Run `ng serve -o`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Back
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Importar el proyecto en un ide como net beans, dirigirse a:
 
-## Further help
+Other Sources > src/main/reosurces > application.properties
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+y en este archivo poner tanto nuestro user como password de mysql
+
+posteriormente podemos arrancar el proyecto.
+
